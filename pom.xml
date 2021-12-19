@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mercymodest.mybatis</groupId>
+    <artifactId>mercymodest-mybatis</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.1-RELEASE</version>
+    <modules>
+        <module>mybatis-executor</module>
+    </modules>
+    <name>mercymodest-mybatis</name>
+    <description>mercymodest-mybatis</description>
+
+    <properties>
+        <java.version>11</java.version>
+        <mybatis-verison>3.5.1</mybatis-verison>
+        <mysql-connector-verision>8.0.27</mysql-connector-verision>
+        <hutool-verision>5.7.16</hutool-verision>
+        <junit-jupiter-verison>5.8.1</junit-jupiter-verison>
+        <lombok-version>1.18.22</lombok-version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+    <dependencies>
+        <!--mybatis-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis-verison}</version>
+        </dependency>
+        <!--mysql connector java-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-verision}</version>
+        </dependency>
+        <!--hutool core-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-core</artifactId>
+            <version>${hutool-verision}</version>
+        </dependency>
+        <!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok-version}</version>
+        </dependency>
+        <!--junit jupiter-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit-jupiter-verison}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
