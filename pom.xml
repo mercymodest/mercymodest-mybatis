@@ -8,6 +8,7 @@
     <version>0.0.1-RELEASE</version>
     <modules>
         <module>mybatis-executor</module>
+        <module>mybtis-caching</module>
     </modules>
     <name>mercymodest-mybatis</name>
     <description>mercymodest-mybatis</description>

@@ -1,6 +1,6 @@
-package com.mercymodest.myabtis.executor.mapper.user;
+package com.mercymodest.mybatis.caching.mapper.user;
 
-import com.mercymodest.myabtis.executor.entity.user.User;
+import com.mercymodest.mybatis.caching.entity.user.User;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

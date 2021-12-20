@@ -1,7 +1,7 @@
 package com.mercymodest.mybatis.jdbc;
 
 import cn.hutool.core.collection.CollectionUtil;
-import com.mercymodest.myabtis.executor.entity.user.User;
+import com.mercymodest.mybatis.executor.entity.user.User;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

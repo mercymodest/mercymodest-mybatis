@@ -1,4 +1,4 @@
-package com.mercymodest.myabtis.executor.entity.user;
+package com.mercymodest.mybatis.caching.entity.user;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

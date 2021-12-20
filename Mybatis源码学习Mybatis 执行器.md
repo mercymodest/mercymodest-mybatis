@@ -128,7 +128,7 @@ tips: 图片来源： [源码阅读网](http://www.coderead.cn/home/index.html)
     @Disabled
     @Test
     public void testSimpleExecutor() {
-        final String statementId = "com.mercymodest.myabtis.executor.mapper.user.UserMapper.selectById";
+        final String statementId = "com.mercymodest.mybatis.executor.mapper.user.UserMapper.selectById";
         final Integer parameter = 1;
         MappedStatement mappedStatement = configuration.getMappedStatement(statementId);
         SimpleExecutor simpleExecutor = new SimpleExecutor(configuration, jdbcTransaction);
@@ -162,7 +162,7 @@ tips: 图片来源： [源码阅读网](http://www.coderead.cn/home/index.html)
     @Disabled
     @Test
     public void testReuseExecutor() {
-        final String statementId = "com.mercymodest.myabtis.executor.mapper.user.UserMapper.selectById";
+        final String statementId = "com.mercymodest.mybatis.executor.mapper.user.UserMapper.selectById";
         final Integer parameter = 1;
         MappedStatement mappedStatement = configuration.getMappedStatement(statementId);
         ReuseExecutor reuseExecutor = new ReuseExecutor(configuration, jdbcTransaction);
@@ -180,6 +180,14 @@ tips: 图片来源： [源码阅读网](http://www.coderead.cn/home/index.html)
 
 ![image-20211219184951589](https://img.mercymodest.com/public/image-20211219184951589.png)
 
+### `ReuseExecutor` 代码梗概
+
+
+
+![image-20211220224411911](https://img.mercymodest.com/public/image-20211220224411911.png)
+
+![image-20211220224500047](https://img.mercymodest.com/public/image-20211220224500047.png)
+
 ## `BatchExecutor`
 
 示例代码
@@ -196,7 +204,7 @@ tips: 图片来源： [源码阅读网](http://www.coderead.cn/home/index.html)
     @Disabled
     @Test
     public void testBatchExecutor() {
-        final String statementId = "com.mercymodest.myabtis.executor.mapper.user.UserMapper.updateUsername";
+        final String statementId = "com.mercymodest.mybatis.executor.mapper.user.UserMapper.updateUsername";
         MappedStatement mappedStatement = configuration.getMappedStatement(statementId);
         BatchExecutor batchExecutor = new BatchExecutor(configuration, jdbcTransaction);
         User user = new User()
@@ -233,7 +241,7 @@ tips: 图片来源： [源码阅读网](http://www.coderead.cn/home/index.html)
     @Disabled
     @Test
     public void testCachingExecutor() {
-        final String statementId = "com.mercymodest.myabtis.executor.mapper.user.UserMapper.selectById";
+        final String statementId = "com.mercymodest.mybatis.executor.mapper.user.UserMapper.selectById";
         final Integer parameter = 1;
         MappedStatement mappedStatement = configuration.getMappedStatement(statementId);
         SimpleExecutor simpleExecutor = new SimpleExecutor(configuration, jdbcTransaction);
@@ -249,6 +257,16 @@ tips: 图片来源： [源码阅读网](http://www.coderead.cn/home/index.html)
 #### 执行结果示例
 
 ![image-20211219191538055](https://img.mercymodest.com/public/image-20211219191538055.png)
+
+### `BatchExecutor`代码梗概
+
+![image-20211220224637744](https://img.mercymodest.com/public/image-20211220224637744.png)
+
+- 最终的SQL相同
+- MappedStatement 相同
+- 必须是连续的 (保证SQL的执行顺序)
+
+![image-20211220224754627](https://img.mercymodest.com/public/image-20211220224754627.png)
 
 ## Mybatis执行过程简单探究
 
@@ -270,7 +288,7 @@ tips: 图片来源： [源码阅读网](http://www.coderead.cn/home/index.html)
     @Test
     public void testMybatisExecutionSteps() {
         try (SqlSession sqlSession = sessionFactory.openSession()) {
-            final String statementId = "com.mercymodest.myabtis.executor.mapper.user.UserMapper.userList";
+            final String statementId = "com.mercymodest.mybatis.executor.mapper.user.UserMapper.userList";
             List<Object> userList = sqlSession.selectList(statementId);
             Optional.ofNullable(userList)
                     .ifPresent(list -> list.forEach(System.out::println));
@@ -317,3 +335,9 @@ tips: 图片来源： [源码阅读网](http://www.coderead.cn/home/index.html)
 #### 执行结果示例
 
 ![image-20211219221955632](https://img.mercymodest.com/public/image-20211219221955632.png)
+
+## Mybatis执行器梗概
+
+tips: 图片来源： [源码阅读网](http://www.coderead.cn/home/index.html)
+
+![image-20211220225100228](https://img.mercymodest.com/public/image-20211220225100228.png)

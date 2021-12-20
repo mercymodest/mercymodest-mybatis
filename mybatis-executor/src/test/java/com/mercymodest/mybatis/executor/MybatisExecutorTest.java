@@ -2,8 +2,8 @@ package com.mercymodest.mybatis.executor;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.RandomUtil;
-import com.mercymodest.myabtis.executor.entity.user.User;
-import com.mercymodest.myabtis.executor.mapper.user.UserMapper;
+import com.mercymodest.mybatis.executor.entity.user.User;
+import com.mercymodest.mybatis.executor.mapper.user.UserMapper;
 import lombok.SneakyThrows;
 import org.apache.ibatis.executor.*;
 import org.apache.ibatis.io.Resources;
