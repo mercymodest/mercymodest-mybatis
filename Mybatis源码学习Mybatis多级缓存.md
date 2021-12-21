@@ -154,6 +154,7 @@ tips: 图片来源： [源码阅读网](http://www.coderead.cn/home/index.html)
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring-mybatis.xml");
         UserMapper userMapper = applicationContext.getBean(UserMapper.class);
         final Integer id = 1;
+        // 手动开启事务
         DataSourceTransactionManager dataSourceTransactionManager = (DataSourceTransactionManager) applicationContext.getBean(TransactionManager.class);
         dataSourceTransactionManager.getTransaction(new DefaultTransactionAttribute());
         User user = userMapper.selectById(id);
