@@ -23,6 +23,8 @@
         <log4j.version>1.2.17</log4j.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <mybatis-spring.version>2.0.6</mybatis-spring.version>
+        <spring.version>5.3.1</spring.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -31,6 +33,24 @@
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis</artifactId>
                 <version>${mybatis-verison}</version>
+            </dependency>
+            <!--mybatis-spring-->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-spring.version}</version>
+            </dependency>
+            <!-- spring-context-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <!--spring-jdbc-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
             </dependency>
             <!--mysql connector java-->
             <dependency>
