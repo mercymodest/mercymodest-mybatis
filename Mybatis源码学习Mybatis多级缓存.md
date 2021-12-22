@@ -140,7 +140,7 @@ tips: 图片来源： [源码阅读网](http://www.coderead.cn/home/index.html)
 
 由此可得，两次的查询的SqlSession是不一致的.
 
-## 当我们在同一个事物中执行查询,则可以保证一级缓存的命中
+## 当我们在同一个事务中执行查询,则可以保证一级缓存的命中
 
 ### 测试代码
 
@@ -166,3 +166,6 @@ tips: 图片来源： [源码阅读网](http://www.coderead.cn/home/index.html)
 #### 执行结果示例
 
 ![image-20211222002620721](https://img.mercymodest.com/public/image-20211222002620721.png)
+
+## Mybatis二级缓存
+
