@@ -169,3 +169,41 @@ tips: 图片来源： [源码阅读网](http://www.coderead.cn/home/index.html)
 
 ## Mybatis二级缓存
 
+### Mybatis 二级缓存命中条件
+
+> - **会话提交后**
+>
+>   tips: 图片来源： [源码阅读网](http://www.coderead.cn/home/index.html)
+>
+>   ![image-20211224235233599](https://img.mercymodest.com/public/image-20211224235233599.png)
+>
+> - `SQL` 语句相同,参数相同
+>
+> - 相同的`StatementId`
+>
+> - `RowBands`相同
+
+### Mybatis 二级缓存结构
+
+tips: 图片来源： [源码阅读网](http://www.coderead.cn/home/index.html)
+
+![image-20211224235407168](https://img.mercymodest.com/public/image-20211224235407168.png)
+
+![image-20211225000703616](https://img.mercymodest.com/public/image-20211225000703616.png)
+
+> `会话`:`事务缓存管理器`:`暂存区`:`缓存区` = `1:1:n:1`
+
+![image-20211224235654400](https://img.mercymodest.com/public/image-20211224235654400.png)
+
+1. ![image-20211224235945631](https://img.mercymodest.com/public/image-20211224235945631.png)
+
+2. ![image-20211225000045011](https://img.mercymodest.com/public/image-20211225000045011.png)
+3. ![image-20211225000122832](https://img.mercymodest.com/public/image-20211225000122832.png)
+4. ![image-20211225000308215](https://img.mercymodest.com/public/image-20211225000308215.png)
+
+### 二级缓存暂存区内容刷新至二级缓存缓存区逻辑梗概
+
+![image-20211225000519686](https://img.mercymodest.com/public/image-20211225000519686.png)
+
+![image-20211225000603155](https://img.mercymodest.com/public/image-20211225000603155.png)
+
