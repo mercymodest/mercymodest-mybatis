@@ -9,6 +9,7 @@
     <modules>
         <module>mybatis-executor</module>
         <module>mybtis-caching</module>
+        <module>mybatis-handler</module>
     </modules>
     <name>mercymodest-mybatis</name>
     <description>mercymodest-mybatis</description>
